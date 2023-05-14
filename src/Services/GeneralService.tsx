@@ -10,13 +10,9 @@ class GeneralService {
         const employeeList = response.data;
         return employeeList;
     }
-    public async getEmployeesByString (input : string) : Promise<EmployeeModel[]>{
-        const response = await axios.get<EmployeeModel[]>( this.url + "getEmployeesByString?input=" + input);
-        const employeeList = response.data;
-        return employeeList;
-    }
-    public async passiveSearch (input : string) : Promise<EmployeeModel[]>{
-        const response = await axios.get<EmployeeModel[]>( this.url + "passiveSearch?input=" + input);
+   
+    public async search (input : string) : Promise<EmployeeModel[]>{
+        const response = await axios.get<EmployeeModel[]>( this.url + "search?input=" + input);
         const employeeList = response.data;
         return employeeList;
     }

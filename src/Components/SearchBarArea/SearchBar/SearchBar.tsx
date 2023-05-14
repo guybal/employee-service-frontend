@@ -12,22 +12,10 @@ function SearchBar(): JSX.Element {
     const [employeeList, setEmployeeList] = useState<EmployeeModel[]>();
 
 
-    
-    
-    async function getEmployeeBySearch(input : string) {
-        try {
-            const employee = await generalService.getEmployeesByString(input);
-            console.log("employees " + employee.toString() );
-            setEmployeeList(employee);
-        } catch (error) {
-            console.log("Failed to retrive employee from database");
-            
-        } 
-    }
   
-        async function passiveSearch (input : string){
+        async function search (input : string){
     
-          const employeeBySearch = await generalService.passiveSearch(input);
+          const employeeBySearch = await generalService.search(input);
           setEmployeeList(employeeBySearch);
         }
      
@@ -51,13 +39,10 @@ function SearchBar(): JSX.Element {
             getAllEmployee();
         }
         else {
-            passiveSearch(newSearchWord);
+            search(newSearchWord);
         }
     }
-    function handleSearch () {
-        getEmployeeBySearch(searchWord)
-    }
-  
+   
     return (
         <div className="SearchBar">
 			
@@ -65,7 +50,7 @@ function SearchBar(): JSX.Element {
             onChange={(e) => {
                 handleInput(e);
             }}/>
-             <button  onClick={() => {passiveSearch(searchWord)}}>🔍</button>
+             <button  onClick={() => {search(searchWord)}}>🔍</button>
             
 
             <ul id="employeeList">
