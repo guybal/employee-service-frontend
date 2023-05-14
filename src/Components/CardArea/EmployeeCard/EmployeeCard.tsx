@@ -26,6 +26,7 @@ function EmployeeCard( props : EmployeeModelProps): JSX.Element {
     
 
     function isJobContains (input : string) :boolean {
+        if(input.length > 1) {
             let lowerCaseJob = props.employee.job.toLowerCase();
             let lowerCaseInput = input.toLowerCase();
             if (lowerCaseJob.includes(lowerCaseInput) && lowerCaseInput !== "") {
@@ -55,10 +56,12 @@ function EmployeeCard( props : EmployeeModelProps): JSX.Element {
             
            
                  return (false);
+        }
+        else return (false);
         
     }
     function isNameContains (input : string) :boolean {
-        
+            if(input.length > 1) {
                 let lowerCaseName = props.employee.name.toLowerCase();
                 let lowerCaseInput = input.toLowerCase();
                 if (lowerCaseName.includes(lowerCaseInput) && lowerCaseInput !== "") {
@@ -84,7 +87,9 @@ function EmployeeCard( props : EmployeeModelProps): JSX.Element {
                 }    
                
                     return (false);
-                
+
+            }
+                else return (false);
             }
 
             
