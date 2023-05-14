@@ -14,10 +14,10 @@ function SearchBar(): JSX.Element {
 
     
     
-    async function getEmployeeBySearch() {
+    async function getEmployeeBySearch(input : string) {
         try {
-            const employee = await generalService.getEmployeesByString(searchWord);
-            console.log("employees " + employee );
+            const employee = await generalService.getEmployeesByString(input);
+            console.log("employees " + employee.toString() );
             setEmployeeList(employee);
         } catch (error) {
             console.log("Failed to retrive employee from database");
@@ -47,14 +47,16 @@ function SearchBar(): JSX.Element {
     function handleInput (e: ChangeEvent<HTMLInputElement>)  {
         const newSearchWord = String(e.target.value);
         setSearchWord(String(e.target.value));
-        if(String(e.target.value) === "") {
+        if(newSearchWord === "" || newSearchWord.length === 1) {
             getAllEmployee();
         }
         else {
             passiveSearch(newSearchWord);
         }
     }
-
+    function handleSearch () {
+        getEmployeeBySearch(searchWord)
+    }
   
     return (
         <div className="SearchBar">
@@ -63,19 +65,18 @@ function SearchBar(): JSX.Element {
             onChange={(e) => {
                 handleInput(e);
             }}/>
-             <button  onClick={() => getEmployeeBySearch()}>🔍</button>
+             <button  onClick={() => {passiveSearch(searchWord)}}>🔍</button>
             
-             
+
             <ul id="employeeList">
-             {searchWord !== undefined &&
-             
+             {
              employeeList?.map((e) => (
-                 <li value={e.id}>
+                 <li key={e.id}>
                  <EmployeeCard employee={e} input={searchWord}/>
                  </li>
                  
                  ))
-                 
+                
                 }
 
                 </ul>
