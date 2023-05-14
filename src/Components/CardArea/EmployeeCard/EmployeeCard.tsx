@@ -50,11 +50,11 @@ function EmployeeCard( props : EmployeeModelProps): JSX.Element {
                 
                 
                 
-                return (Boolean(true));
+                return (true);
             }
             
            
-                 return (Boolean(false));
+                 return (false);
         
     }
     function isNameContains (input : string) :boolean {
@@ -79,11 +79,11 @@ function EmployeeCard( props : EmployeeModelProps): JSX.Element {
                     setHighlightedPart(props.employee.name.substring(markIndex , markIndex + input.length));
                     setSecondHalfName(props.employee.name.substring(markIndex + input.length , props.employee.name.length));
                     
-                    return (Boolean(true));
+                    return (true);
                     
                 }    
                
-                    return (Boolean(false));
+                    return (false);
                 
             }
 

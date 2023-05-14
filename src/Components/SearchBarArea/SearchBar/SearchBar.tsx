@@ -9,6 +9,7 @@ import generalService from "../../../Services/GeneralService";
 function SearchBar(): JSX.Element {
 
     const [searchWord, setSearchWord] = useState<string>("");
+    const [clicked, setClicked] = useState<boolean>(false);
     const [employeeList, setEmployeeList] = useState<EmployeeModel[]>();
 
 
@@ -49,11 +50,14 @@ function SearchBar(): JSX.Element {
             <input className="input" id="input" type="text" placeholder="Search..." value={searchWord}
             onChange={(e) => {
                 handleInput(e);
+                setClicked(false);
             }}/>
-             <button  onClick={() => {search(searchWord)}}>🔍</button>
+             <button  onClick={() => {search(searchWord);
+                                        setClicked(true);
+                                        console.log(clicked)}}>🔍</button>
             
 
-            <ul id="employeeList">
+            <ul className={clicked ? 'clicked' : 'unClicked'} id="employeeList">
              {
              employeeList?.map((e) => (
                  <li key={e.id}>
@@ -63,6 +67,7 @@ function SearchBar(): JSX.Element {
                  ))
                 
                 }
+           
 
                 </ul>
            

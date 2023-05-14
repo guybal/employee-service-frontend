@@ -1,3 +1,5 @@
+
+
 .SearchBar {
     
     width: 500px;
@@ -12,11 +14,16 @@ input {
     border: 1px solid black;
     border-radius: 25px 25px ;
     padding: 0 5px;
-    :hover {
+    :hover .input{
         border: 3px solid black;
         border-radius: 5px ;
+      
     }
 }
+input:focus ~ ul {
+    display: flex;
+}
+
 ul {
     list-style-type: none;
     position: relative;
@@ -25,11 +32,13 @@ ul {
     top: -10px;
     height: 169.5px;
     max-height: 100%;
-    display: flex;
+    display: none;
     justify-content: flex-start;
     overflow-y: scroll;
     width: 375px;
-    flex-grow: 1;
+    &.clicked {
+        display: flex;
+    }
     &::-webkit-scrollbar {
         width: 8px;
     }
@@ -51,12 +60,12 @@ ul {
 
     }
     
-    
     li {
         list-style-type: none;
+        display: flex;
       
+      }
     }
-}
 button {
     height: 30px;
     background-color: rgba(241, 215, 12, 0.951);
@@ -65,5 +74,7 @@ button {
     vertical-align: middle;
     box-shadow: 0px 2px 2px rgba( 0, 0, 0.2, 0.2);
     margin-left: 2px;
-   
+//    :active + :active ~.employeeList{
+//     display: flex;
+//    }
 }

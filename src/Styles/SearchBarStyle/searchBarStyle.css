@@ -12,9 +12,13 @@ input {
   border-radius: 25px 25px;
   padding: 0 5px;
 }
-input :hover {
+input :hover .input {
   border: 3px solid black;
   border-radius: 5px;
+}
+
+input:focus ~ ul {
+  display: flex;
 }
 
 ul {
@@ -25,11 +29,13 @@ ul {
   top: -10px;
   height: 169.5px;
   max-height: 100%;
-  display: flex;
+  display: none;
   justify-content: flex-start;
   overflow-y: scroll;
   width: 375px;
-  flex-grow: 1;
+}
+ul.clicked {
+  display: flex;
 }
 ul::-webkit-scrollbar {
   width: 8px;
@@ -51,6 +57,7 @@ ul::-webkit-scrollbar-thumb:hover {
 }
 ul li {
   list-style-type: none;
+  display: flex;
 }
 
 button {
