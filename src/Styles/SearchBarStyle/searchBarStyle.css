@@ -1,0 +1,64 @@
+.SearchBar {
+  width: 500px;
+}
+
+input {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  box-sizing: border-box;
+  width: 340px;
+  border: 1px solid black;
+  border-radius: 25px 25px;
+  padding: 0 5px;
+}
+input :hover {
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+ul {
+  list-style-type: none;
+  position: relative;
+  flex-direction: column;
+  left: 18px;
+  top: -10px;
+  height: 169.5px;
+  max-height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  width: 375px;
+  flex-grow: 1;
+}
+ul::-webkit-scrollbar {
+  width: 8px;
+}
+ul::-webkit-scrollbar-track {
+  background: hsl(170, 80%, 70%);
+  border: 1px solid rgb(97, 213, 242);
+  border-radius: 5px;
+  margin-block: 2px;
+}
+ul::-webkit-scrollbar-thumb {
+  background: hsl(170, 100%, 20%);
+  border: 1px solid hsl(170, 25%, 50%);
+  border-radius: 25%;
+  max-height: 100vw;
+}
+ul::-webkit-scrollbar-thumb:hover {
+  border: 1px solid hsl(170, 80%, 70%);
+}
+ul li {
+  list-style-type: none;
+}
+
+button {
+  height: 30px;
+  background-color: rgba(241, 215, 12, 0.951);
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  margin-left: 2px;
+}/*# sourceMappingURL=searchBarStyle.css.map */

@@ -1,0 +1,58 @@
+
+button {
+    height: 30px;
+    background-color: rgba(241, 215, 12, 0.951);
+    border: 1px solid white;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 0px 2px 2px rgba( 0, 0, 0.2, 0.2);
+    
+   
+}
+
+.Layout {
+    height: 100vh;
+    background-image: url("../../Utils/BackgroundImage/5291450.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    size: inherit;
+    position: relative;
+}
+
+.text-area {
+    position: absolute;
+    display: flexbox;
+    top: 25%;
+    span {
+        text-decoration: underline;
+        color: rgba(196, 64, 236, 0.951);
+        font-weight: bolder;
+        font-size: larger;
+        font-family: cursive;
+        position: relative;
+        right: 3vh;
+        top: 5vh;
+        
+      
+    }
+    p {
+        text-decoration: double  rgba(129, 12, 254, 0.951);;
+        color:rgba(129, 12, 254, 0.951);
+        font-weight: small;
+        font-size: small;
+        font-family: cursive;
+        position: relative;
+        right: 3vh;
+        top: 3vh;
+    }
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    max-height: 50vh;
+    top: 40%;
+    
+}

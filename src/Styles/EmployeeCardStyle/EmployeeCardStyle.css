@@ -1,0 +1,45 @@
+.EmployeeCard {
+  width: 340px;
+  border-radius: 25px 25px;
+  padding: 0 5px;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+}
+.EmployeeCard h1 {
+  position: relative;
+  left: 20px;
+  top: -10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 0px;
+  font-size: medium;
+}
+.EmployeeCard h1 mark {
+  background-color: rgba(241, 215, 12, 0.951);
+}
+.EmployeeCard h3 {
+  position: absolute;
+  left: 75px;
+  top: 19px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: small;
+}
+.EmployeeCard h3 mark {
+  background-color: rgba(241, 215, 12, 0.951);
+}
+
+aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0px;
+  -o-object-position: center;
+     object-position: center;
+}/*# sourceMappingURL=EmployeeCardStyle.css.map */
